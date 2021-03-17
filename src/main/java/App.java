@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args){
         Calculator Calculator = new Calculator();
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
         while(true) {
             System.out.println("*****************************************************");
             System.out.println("===========================");
@@ -18,18 +18,20 @@ public class App {
             int choice=0;
             int chk=0;
             try {
-                choice = sc.nextInt();
+//                choice = sc.nextInt();
+                choice = Integer.parseInt(args[0]);
             }
             catch (Exception e){
                 System.out.println("Entry Invalid...");
-                sc.nextLine();
+//                sc.nextLine();
                 chk = 1;
             }
             if(chk==0) {
                 if (choice == 1) {
                     try {
                         System.out.print("Please enter the number : ");
-                        int val = sc.nextInt();
+//                        int val = sc.nextInt();
+                        int val = Integer.parseInt(args[1]);
                         System.out.println(String.format("Square Root of %d is %f", val, Calculator.SquareRoot(val)));
                     } catch (Exception e) {
                         System.out.println("Entry Invalid...");
@@ -37,15 +39,17 @@ public class App {
                 } else if (choice == 2) {
                     System.out.print("Please enter the number : ");
                     try {
-                        int val = sc.nextInt();
-                        System.out.println(String.format("Factorial of %d is %d", val, Calculator.Factorial(val)));
+//                        int val = sc.nextInt();
+                        int val = Integer.parseInt(args[1]);
+//                        System.out.println(String.format("Factorial of %d is %d", val, Calculator.Factorial(val)));
                     } catch (Exception e) {
                         System.out.println("Entry Invalid...");
                     }
                 } else if (choice == 3) {
                     System.out.print("Please enter the number : ");
                     try {
-                        int val = sc.nextInt();
+//                        int val = sc.nextInt();
+                        int val = Integer.parseInt(args[1]);
                         System.out.println("================================");
                         System.out.println(String.format("Natural Log of %d is %f", val, Calculator.NaturalLog(val)));
                     } catch (Exception e) {
@@ -54,9 +58,11 @@ public class App {
                 } else if (choice == 4) {
                     try {
                         System.out.print("Please enter the base : ");
-                        int val1 = sc.nextInt();
+//                        int val1 = sc.nextInt();
+                        int val1 = Integer.parseInt(args[1]);
                         System.out.print("Please enter the power : ");
-                        int val2 = sc.nextInt();
+//                        int val2 = sc.nextInt();
+                        int val2 = Integer.parseInt(args[2]);
                         System.out.println(String.format("%d raised to %d is %f", val1, val2, Calculator.PoW(val1, val2)));
                     } catch (Exception e) {
                         System.out.println("Entry Invalid...");
